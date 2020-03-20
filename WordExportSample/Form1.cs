@@ -40,11 +40,16 @@ namespace WordExportSample
                 ReplaceWordStub("<endDate>", endDate, wordDocument);
 
                 wordDocument.SaveAs(SaveFilePath);
+                // Показывает приложение Word
                 wordApp.Visible = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                wordApp.Quit();
             }
             
         }
